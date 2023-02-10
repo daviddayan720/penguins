@@ -1,0 +1,20 @@
+---
+title: "Sexual Dimorphism"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Sexual dimorphism
+All three species appear to have sexually dimorphic body masses, with males of all three species having greater body masses. 
+```{r, echo = FALSE, warning = FALSE}
+penguins_no_na <- penguins %>% filter (!is.na(sex))
+penguins_no_na %>% 
+  ggplot()+
+  xlab("Sex")+
+  ylab("Body Mass (g)")+
+  geom_boxplot(mapping = aes(x = sex, y = body_mass_g, color = sex))+
+  facet_wrap(~species)
+```

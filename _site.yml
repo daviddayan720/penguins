@@ -2,8 +2,12 @@ name: "our-website"
 navbar:
   title: "Palmer Station Penguins"
   left:
-    - text: "Cars"
+    - text: "Home"
       href: index.html
-    - text: "About"
-      href: about.html
+    - text: "Single Trait Distribution"
+      href: single_trait.html
+    - text: "Multiple Trait Relationships"
+      href: multiple_traits.html
+    - text: "Sexual Dimorphism"
+      href: sexual_dimorphism.html
 output_dir: "."

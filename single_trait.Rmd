@@ -1,0 +1,18 @@
+---
+title: "Single Traits"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Single trait distribution
+Chinstrap penguins tend to have longer bills than Adelie and Gentoo penguins, although Chinstrap and Gentoo penguins are more similar in bill length than are Chinstrap and Adelie penguins. 
+```{r, echo = FALSE, warning = FALSE}
+penguins %>%
+  ggplot() +
+  xlab("Bill Length (mm)")+
+  ylab("Density")+
+  geom_density(mapping = aes(x = bill_length_mm, fill=species), alpha=0.5)
+```

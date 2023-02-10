@@ -1,0 +1,20 @@
+---
+title: "Relationship Between Multiple Traits"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Relationship between multiple traits
+For all three species, there is a positive relationship between body mass and flipper length. Gentoo penguins typically have the greatest body masses and flipper lengths of the three species, and for a given body mass, Chinstrap penguins tend to have longer flippers than Adelie penguins.
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
+penguins %>% 
+  ggplot()+
+  xlab("Body Mass (g)")+
+  ylab("Flipper Length (mm)")+
+  geom_point(mapping = aes(x = body_mass_g, y = flipper_length_mm, color = species)) + 
+  geom_smooth(method = "lm", mapping = aes(x = body_mass_g, y = flipper_length_mm, color = species)) 
+  
+```
